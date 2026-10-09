@@ -1,112 +1,130 @@
 <div align="center">
 
 # 🖥️ ECPC: Efficient Custom Personal Computer Builder
-**Object-Oriented Programming (OOP 101) Project Proposal**  
-*Batangas State University - The National Engineering University*  
-*College of Informatics and Computing Sciences | Alangilan Campus*
+
+**Batangas State University — The National Engineering University**  
+*College of Informatics and Computing Sciences | Computer Science Department*  
+*OOP 101: Object-Oriented Programming (1st Semester, AY 2026-2027)*
+
+[![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
+[![Status](https://img.shields.io/badge/Status-In%20Development-blue.svg)]()
+[![Section](https://img.shields.io/badge/Section-CS%202101-green.svg)]()
 
 </div>
 
 ---
 
-## 📖 Table of Contents
-1. [Project Title](#-project-title)
-2. [Project Description](#-project-description)
-3. [Problem Being Addressed](#-problem-being-addressed)
-4. [Project Objectives](#-project-objectives)
-5. [Target Users](#-target-users)
-6. [Main Features](#-main-features)
-7. [Technologies Used](#-technologies-used)
-8. [Team Members & Roles](#-team-members--roles)
-9. [OOP Concepts Demonstrated](#-oop-concepts-demonstrated)
-10. [Instructions for Running the Program](#-instructions-for-running-the-program)
-11. [Sample Screenshots](#-sample-screenshots)
-12. [Known Limitations](#-known-limitations)
-13. [Future Improvements](#-future-improvements)
-14. [Project Contributors](#-project-contributors)
+## 📖 About the Project
+Building a custom personal computer is a technical task that can be overwhelming for beginners. Choosing incompatible parts or mismanaging your budget leads to wasted time, money, and hardware performance bottlenecks. 
+
+**ECPC (Efficient Custom Personal Computer Builder)** is a Java-based console application designed to help students, first-time PC builders, and hobbyists plan, validate, and optimize custom PC builds based on budget, intended workload (schoolwork, gaming, or video editing), and brand preferences.
 
 ---
 
-## 📌 1. Project Title
-**ECPC: Efficient Custom Personal Computer Builder**[cite: 2]
+## 🎯 Problem Being Addressed
+* **Hardware Incompatibility:** Manually verifying sockets, RAM types, power draws, and case clearances is error-prone.
+* **Budget Misallocation:** Users often overspend on unbalanced components (e.g., pairing an expensive GPU with a weak CPU).
+* **Technical Complexity:** Beginners lack intuitive guidance when navigating complex hardware specifications.
 
 ---
 
-## 📝 2. Project Description
-The **Efficient Custom Personal Computer Builder (ECPC)** is a Java-based console application designed to guide users in planning and configuring custom PC builds based on their budget, intended use (workload), and brand preferences[cite: 2, 3]. By loading a predefined catalog of hardware components from a data file[cite: 2, 6], ECPC automates compatibility checks, estimates power requirements, evaluates performance-to-price value, and flags potential CPU-GPU bottlenecks[cite: 2].
-
----
-
-## ⚠️ 3. Problem Being Addressed
-* **Hardware Complexity:** Choosing compatible parts (CPUs, motherboards, GPUs, RAM, and power supplies) can be intimidating and confusing for beginners[cite: 2].
-* **Financial Waste:** Purchasing incompatible or poorly balanced components leads to wasted money, return hassles, and underperforming systems (e.g., pairing a powerful GPU with a weak CPU)[cite: 2].
-* **Budget Constraints:** Finding the right balance between cost and performance for specific tasks requires careful calculation[cite: 2].
-
----
-
-## 🎯 4. Project Objectives
+## 🚀 Project Objectives
 
 ### General Objective
-To develop a Java-based application that guides users in designing a compatible PC build within their budget by validating component compatibility and power requirements, rating the balance between the processor and graphics card, and recommending parts based on the user's intended use[cite: 3].
+To develop a Java-based application that guides users in designing a compatible PC build within their budget by validating component compatibility and power requirements, rating the CPU-GPU balance, and recommending parts tailored to the user's workload.
 
 ### Specific Objectives
-1. **Catalog Management:** Build a parts catalog (CPUs, motherboards, GPUs, RAM, storage, power supplies, and cases) loaded from a data file with specs, performance scores, and prices[cite: 3].
-2. **Compatibility Validation:** Implement rigorous checks for CPU-motherboard sockets, RAM type/capacity, case form factors, GPU length limits, and PSU wattage safety margins[cite: 3].
-3. **Auto-Build Optimization:** Recommend complete, budget-constrained, compatible builds tailored to specific workloads and optional brand preferences[cite: 3].
-4. **Bottleneck Detection:** Rate the CPU-GPU balance as balanced, moderate, or severe for the chosen workload[cite: 3].
-5. **Custom Configuration:** Allow users to create, edit, save, and load custom builds[cite: 3].
-6. **Scalable OOP Architecture:** Apply Object-Oriented Programming principles to allow new component types to be added with minimal code modifications[cite: 4].
+1. **Parts Catalog:** Load CPUs, motherboards, GPUs, RAM, storage, power supplies, and cases from a local data file with specifications, performance scores, and prices.
+2. **Compatibility Validation:** Check CPU-motherboard sockets, RAM types/capacities, case form factors vs. GPU lengths, and PSU wattage safety margins.
+3. **Auto-Build Optimizer:** Automatically recommend a complete, compatible build within a specified minimum and maximum budget range.
+4. **Bottleneck Detector:** Rate CPU-GPU balance as *Balanced*, *Moderate*, or *Severe* for the chosen workload.
+5. **Custom Builds & Persistence:** Allow users to create, edit, save, and load custom PC builds via file management.
+6. **Robust OOP Design:** Demonstrate core Object-Oriented Programming principles to ensure extensibility for new component types.
 
 ---
 
-## 👥 5. Target Users
+## 👥 Target Users
 
 | Target User | How They Will Use the System |
 | :--- | :--- |
-| **Students** | Input a limited budget and workload (schoolwork, programming, editing, or light gaming) to receive recommendations for reliable, affordable parts[cite: 4]. |
-| **First-Time PC Buyers** | Provide budget constraints, brand preferences, and workloads to get fully guided recommendations while avoiding compatibility or performance mismatches[cite: 4]. |
-| **PC Hobbyists** | Input custom part lists via the Custom Build module to verify compatibility, power draw, and balance before saving configurations[cite: 4]. |
+| **Students** | Enter a budget range and school/light-gaming workload to receive affordable, compatible part recommendations. |
+| **First-Time PC Buyers** | Input preferences to generate optimized builds while receiving warnings against incompatibilities or performance mismatches. |
+| **PC Hobbyists** | Input custom part lists through the Custom Build feature to check compatibility, power draw, and bottlenecks before saving. |
 
 ---
 
-## ✨ 6. Main Features
-* **Compatibility Checker:** Verifies socket types, memory capacities, physical clearances (GPU length vs. case), and power supply limits[cite: 4, 5].
-* **Bottleneck Detector:** Compares CPU and GPU performance metrics against the selected workload to flag performance discrepancies[cite: 4, 5].
-* **Auto-Build Optimizer:** Automatically generates optimal part configurations within a specified minimum and maximum budget[cite: 4, 5].
-* **Custom Build Mode:** Lets users manually add, replace, or remove specific components with real-time running totals and status updates[cite: 5].
-* **File Management:** Save and load custom or generated configurations locally[cite: 5].
+## ✨ Main Features
+
+* 🔍 **Compatibility Checker:** Verifies socket types, dimensions, form factors, and power sufficiency.
+* ⚖️ **Bottleneck Detector:** Compares CPU and GPU performance relative to the chosen workload to flag potential performance bottlenecks.
+* ⚙️ **Auto-Build Optimizer:** Generates optimal builds matching user budgets and brand preferences (Intel/AMD/Any).
+* 🛠️ **Custom Build Manager:** Add, replace, or remove components interactively with real-time total cost calculations.
+* 💾 **Save & Load System:** Persist and retrieve your custom configurations from local files.
 
 ---
 
-## 🛠️ 7. Technologies Used
-* **Programming Language:** Java[cite: 2]
-* **Paradigm:** Object-Oriented Programming (OOP)[cite: 4]
-* **Data Structures:** Java Collections Framework (`ArrayList`, Enums)[cite: 6, 7]
-* **File I/O:** Local text/data files for catalog loading and build persistence[cite: 2, 7]
+## 🛠️ Technologies Used
+* **Programming Language:** Java (Standard Edition)
+* **Data Handling:** Java Collections Framework (`ArrayList`, `HashMap`) & File I/O
+* **Architecture:** Object-Oriented Programming (OOP) Design Patterns
 
 ---
 
-## 👨‍💻 8. Team Members & Roles
+## 🧱 OOP Concepts Demonstrated
 
-| Member Name | Role & Responsibilities |
-| :--- | :--- |
-| **Carandang, Sean Christ Trez' Davidoff A.** | **Lead Programmer:** Coordinates implementation of Java classes, methods, and core OOP features[cite: 9]. |
-| **Palma, Tristan P.** | **Project Leader:** Oversees task coordination, milestone deadlines, instructor communications, and team syncs[cite: 9]. |
-| **Palor, Christian Gene C.** | **System/Design Lead:** Formulates system requirements, class specifications, UML designs, and application structure[cite: 9]. |
-
----
-
-## 🧩 9. OOP Concepts Demonstrated
-* **Classes & Objects:** Blueprints for hardware parts (`Component`, `CPU`, `Motherboard`, `GPU`, etc.), system logic (`PCBuild`, `PartCatalog`), and utility controllers[cite: 5].
-* **Encapsulation:** Private attributes (prices, socket types, wattage, dimensions) accessed securely via public getters, protecting catalog integrity[cite: 5].
-* **Inheritance:** An abstract base class (`Component`) shares common attributes (`id`, `name`, `brand`, `price`), while hardware sub-classes extend part-specific properties[cite: 5, 6].
-* **Polymorphism:** Uniform handling of different hardware components under a common `Component` type while overriding methods like `getSpecs()` and `checkCompatibility()`[cite: 6].
-* **Abstraction:** Hides complex calculations (wattage totals, bottleneck metrics) behind clean method interfaces[cite: 6].
-* **Exception Handling:** Custom exceptions (`IncompatibleComponentException`, `BudgetExceededException`, `InvalidInputException`) prevent program crashes during invalid inputs or file errors[cite: 7].
+* **Classes & Objects:** Modular blueprints representing hardware components (`Component`, `CPU`, `GPU`, etc.), the user build (`PCBuild`), and system logic (`CompatibilityChecker`, `BottleneckAnalyzer`).
+* **Encapsulation:** Private attributes accessed via public getters; immutable catalog parts protected from unauthorized modification.
+* **Inheritance:** An abstract `Component` base class shared across hardware subclasses to eliminate redundant code.
+* **Polymorphism:** Unified handling of parts as `Component` objects while overriding methods like `getSpecs()` and `checkCompatibility()` for specialized behavior.
+* **Abstraction:** Hiding complex algorithmic calculations behind clean method calls.
+* **Exception Handling:** Custom exceptions (`IncompatibleComponentException`, `BudgetExceededException`, `InvalidInputException`) ensuring graceful error recovery.
 
 ---
 
-## 🚀 10. Instructions for Running the Program
-1. **Clone the Repository:**
+## 👷 Team Members & Roles
+
+| Team Member | Role | Assigned Tasks |
+| :--- | :--- | :--- |
+| **Palma, Tristan P.** | Project Leader | Coordinates tasks, monitors deadlines, communicates with the instructor, and facilitates team meetings. |
+| **Carandang, Sean Christ Trez' Davidoff A.** | Lead Programmer | Coordinates the implementation of Java classes, methods, and OOP features. |
+| **Palor, Christian Gene C.** | System / Design Lead | Develops system requirements, class designs, UML diagrams, and overall application structure. |
+
+---
+
+## 💻 Instructions for Running the Program
+
+1. Ensure you have **Java Development Kit (JDK 17 or higher)** installed on your machine.
+2. Clone the repository:
    ```bash
-   git clone [https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git](https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git)
+   git clone https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git
+   ```
+3. Open the project directory in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse, VS Code).
+4. Compile and run the main application entry point (`ECPCApp.java`).
+5. Follow the interactive console menu prompts to use Auto Build, Custom Build, or load saved configurations.
+
+---
+
+## 📸 Sample Screenshots
+
+*(Screenshots of the Console Menu, Auto Build Setup, and Compatibility Analysis UI will be added here as development progresses.)*
+
+---
+
+## ⚠️ Known Limitations
+* **No Live Pricing/Checkout:** Prices and specifications are derived from a static local dataset; live online store integration and payment processing are not supported.
+* **Estimated Benchmarks:** Performance scores and bottleneck ratings rely on fixed reference scores rather than real-time hardware diagnostics.
+* **Standard Desktop Parts Only:** Specialized server hardware, laptops, pre-builts, custom liquid cooling loops, and individual CPU coolers/case fans are excluded.
+* **Local Storage Only:** No user accounts or cloud storage features; all saved builds reside in local files.
+
+---
+
+## 🔮 Future Improvements
+* Integration of a graphical user interface (GUI) using JavaFX or Swing.
+* Web scraper module to fetch up-to-date local market pricing.
+* Support for a wider array of components, including CPU coolers, case lighting, and multiple storage drives.
+
+---
+
+## 🗂️ Project Contributors & Repository
+* **Team Name:** An Family (Section: CS 2101)
+* **GitHub Repository:** [ECPC-Efficient-Custom-Personal-Computer-Builder](https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git)
