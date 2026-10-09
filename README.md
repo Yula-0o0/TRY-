@@ -36,10 +36,10 @@ To develop a Java-based application that guides users in designing a compatible 
 ### Specific Objectives
 1. **Parts Catalog:** Load CPUs, motherboards, GPUs, RAM, storage, power supplies, and cases from a local data file with specifications, performance scores, and prices.
 2. **Compatibility Validation:** Check CPU-motherboard sockets, RAM types/capacities, case form factors vs. GPU lengths, and PSU wattage safety margins.
-3. **Auto-Build Optimizer:** Automatically recommend a complete, compatible build within a specified minimum and maximum budget range.
+3. **Auto-Build:** Automatically recommend a complete, compatible build within a specified minimum and maximum budget range.
 4. **Bottleneck Detector:** Rate CPU-GPU balance as *Balanced*, *Moderate*, or *Severe* for the chosen workload.
-5. **Custom Builds & Persistence:** Allow users to create, edit, save, and load custom PC builds via file management.
-6. **Robust OOP Design:** Demonstrate core Object-Oriented Programming principles to ensure extensibility for new component types.
+5. **Custom Builds:** Allow users to create, edit, save, and load custom PC builds.
+6. **Application of Object-Oriented Programming Principles:** Demonstrate core Object-Oriented Programming principles to ensure extensibility for new component types.
 
 ---
 
@@ -57,25 +57,29 @@ To develop a Java-based application that guides users in designing a compatible 
 
 * 🔍 **Compatibility Checker:** Verifies socket types, dimensions, form factors, and power sufficiency.
 * ⚖️ **Bottleneck Detector:** Compares CPU and GPU performance relative to the chosen workload to flag potential performance bottlenecks.
-* ⚙️ **Auto-Build Optimizer:** Generates optimal builds matching user budgets and brand preferences (Intel/AMD/Any).
-* 🛠️ **Custom Build Manager:** Add, replace, or remove components interactively with real-time total cost calculations.
-* 💾 **Save & Load System:** Persist and retrieve your custom configurations from local files.
+* ⚙️ **Auto Build and Budget Optimizer:** Generates optimal builds matching user budgets and brand preferences.
+* 🛠️ **Custom Build:** Lets users add, replace, or remove specific parts for a build they have in mind, with the running total cost and compatibility status shown as they edit.
+* 💾 **Save & Load Builds:** Persist and retrieve your custom configurations from local files.
 
 ---
 
 ## 🛠️ Technologies Used
-* **Programming Language:** Java (Standard Edition)
+* **Programming Language:** Java 
 
 ---
 
 ## 🧱 OOP Concepts Demonstrated
 
-* **Classes & Objects:** Modular blueprints representing hardware components (`Component`, `CPU`, `GPU`, etc.), the user build (`PCBuild`), and system logic (`CompatibilityChecker`, `BottleneckAnalyzer`).
-* **Encapsulation:** Private attributes accessed via public getters; immutable catalog parts protected from unauthorized modification.
-* **Inheritance:** An abstract `Component` base class shared across hardware subclasses to eliminate redundant code.
-* **Polymorphism:** Unified handling of parts as `Component` objects while overriding methods like `getSpecs()` and `checkCompatibility()` for specialized behavior.
-* **Abstraction:** Hiding complex algorithmic calculations behind clean method calls.
-* **Exception Handling:** Custom exceptions (`IncompatibleComponentException`, `BudgetExceededException`, `InvalidInputException`) ensuring graceful error recovery.
+## 🧩 9. OOP Concepts Demonstrated
+
+* **Classes and Objects:** Defines blueprints for hardware and system logic (such as `Component`, `CPU`, `Motherboard`, `GPU`, `RAM`, `Storage`, `PowerSupply`, `PCCase`, `PCBuild`, and `PartCatalog`), with objects representing individual catalog parts, the user's current build, and generated reports.
+* **Methods:** Encapsulates core operations including calculating total costs and estimated wattage (`PCBuild`), running compatibility checks (`CompatibilityChecker`), computing CPU-GPU balance (`BottleneckAnalyzer`), and generating recommended builds (`BuildRecommender`).
+* **Encapsulation:** Keeps attributes like price, socket type, wattage, dimensions, and performance scores private and accessed via public getters, while catalog parts have no setters to prevent modification after loading and build updates pass through validating methods like `addComponent()`.
+* **Inheritance:** Uses the abstract class `Component` to hold shared attributes (`ID`, `name`, `brand`, `price`), which `CPU`, `Motherboard`, `GPU`, `RAM`, `Storage`, `PowerSupply`, and `PCCase` extend to add their own specifications and avoid repeated code.
+* **Polymorphism:** Handles all parts uniformly as `Component` objects (such as storing them in a single list and displaying them in a single loop) while each subclass overrides methods like `getSpecs()` and `checkCompatibility()` with specialized behavior.
+* **Abstraction:** Relies on the abstract class `Component` to declare mandatory methods for every part, hiding complex calculations like wattage totals and bottleneck formulas behind simple method calls for the menu code.
+* **Exception Handling:** Employs custom exceptions (such as `IncompatibleComponentException`, `BudgetExceededException`, and `InvalidInputException`) alongside try-catch blocks to handle invalid inputs, incompatible parts, unfeasible budgets, and missing or corrupted files without crashing the program.
+* **Arrays/Data Handling:** Utilizes `ArrayList` collections to store the parts catalog, the components in the active build, and the collection of saved builds.
 
 ---
 
@@ -97,12 +101,11 @@ To develop a Java-based application that guides users in designing a compatible 
 
 ## 📸 Sample Screenshots
 
-https://scontent-mnl1-1.xx.fbcdn.net/v/t1.15752-9/839445465_26429512356745694_5874399682467514607_n.png?stp=dst-png&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH4lIZX2wWLkbO9D1sHwx9gKTONWC4uyL4pM41YLi7IvmrHWeFhn054HjGNQm1vrAQeZG5Dahu-WqI9ojwFMz0K&_nc_ohc=BcNZ7e1Sdw4Q7kNvwHww4b8&_nc_oc=Adol_0mLk9QV9B-45XTSBQSbyDg4qacZ57DBhrT4pAfZikRfvd6jQ2FBMkSW3sy4YuQ&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_ss=7b2a8&oh=03_Q7cD6gEf8C1ZUj-asiEmC9j3RRdKuODrbM7rukh__2v81PATOA&oe=6AEFE2E4
 
 ---
 
 ## ⚠️ Known Limitations
-* **No Live Pricing/Checkout:** Prices and specifications are derived from a static local dataset; live online store integration and payment processing are not supported.
+* **No Live Pricing/Checkout:** Prices and specifications are derived from a static local dataset.
 * **Estimated Benchmarks:** Performance scores and bottleneck ratings rely on fixed reference scores rather than real-time hardware diagnostics.
 * **Standard Desktop Parts Only:** Specialized server hardware, laptops, pre-builts, custom liquid cooling loops, and individual CPU coolers/case fans are excluded.
 * **Local Storage Only:** No user accounts or cloud storage features; all saved builds reside in local files.
@@ -110,9 +113,7 @@ https://scontent-mnl1-1.xx.fbcdn.net/v/t1.15752-9/839445465_26429512356745694_58
 ---
 
 ## 🔮 Future Improvements
-* Integration of a graphical user interface (GUI) using JavaFX or Swing.
-* Web scraper module to fetch up-to-date local market pricing.
-* Support for a wider array of components, including CPU coolers, case lighting, and multiple storage drives.
+* 
 
 ---
 
