@@ -65,8 +65,6 @@ To develop a Java-based application that guides users in designing a compatible 
 
 ## 🛠️ Technologies Used
 * **Programming Language:** Java (Standard Edition)
-* **Data Handling:** Java Collections Framework (`ArrayList`, `HashMap`) & File I/O
-* **Architecture:** Object-Oriented Programming (OOP) Design Patterns
 
 ---
 
@@ -93,20 +91,13 @@ To develop a Java-based application that guides users in designing a compatible 
 
 ## 💻 Instructions for Running the Program
 
-1. Ensure you have **Java Development Kit (JDK 17 or higher)** installed on your machine.
-2. Clone the repository:
-   ```bash
-   git clone https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git
-   ```
-3. Open the project directory in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse, VS Code).
-4. Compile and run the main application entry point (`ECPCApp.java`).
-5. Follow the interactive console menu prompts to use Auto Build, Custom Build, or load saved configurations.
+1. 
 
 ---
 
 ## 📸 Sample Screenshots
 
-*(Screenshots of the Console Menu, Auto Build Setup, and Compatibility Analysis UI will be added here as development progresses.)*
+https://scontent-mnl1-1.xx.fbcdn.net/v/t1.15752-9/839445465_26429512356745694_5874399682467514607_n.png?stp=dst-png&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH4lIZX2wWLkbO9D1sHwx9gKTONWC4uyL4pM41YLi7IvmrHWeFhn054HjGNQm1vrAQeZG5Dahu-WqI9ojwFMz0K&_nc_ohc=BcNZ7e1Sdw4Q7kNvwHww4b8&_nc_oc=Adol_0mLk9QV9B-45XTSBQSbyDg4qacZ57DBhrT4pAfZikRfvd6jQ2FBMkSW3sy4YuQ&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_ss=7b2a8&oh=03_Q7cD6gEf8C1ZUj-asiEmC9j3RRdKuODrbM7rukh__2v81PATOA&oe=6AEFE2E4
 
 ---
 
