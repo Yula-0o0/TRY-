@@ -105,7 +105,7 @@ To develop a Java-based application that guides users in designing a compatible 
 ---
 
 ## ⚠️ Known Limitations
-* **No Live Pricing/Checkout:** Prices and specifications are derived from a static local dataset.
+* **No Live Pricing:** Prices and specifications are derived from a static local dataset.
 * **Estimated Benchmarks:** Performance scores and bottleneck ratings rely on fixed reference scores rather than real-time hardware diagnostics.
 * **Standard Desktop Parts Only:** Specialized server hardware, laptops, pre-builts, custom liquid cooling loops, and individual CPU coolers/case fans are excluded.
 * **Local Storage Only:** No user accounts or cloud storage features; all saved builds reside in local files.
