@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/logo.gif" alt="ECPC Logo" width="300">
+  <img src="static/logo.gif" alt="ECPC Logo" width="800">
 </p>
 
 <div align="center">
