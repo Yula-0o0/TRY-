@@ -471,3 +471,302 @@ classDiagram
     MainFrame o-- "1" PCBuild
     MainFrame ..> BottleneckAnalyzer
 ```
+
+## 📐 UML Class Diagram
+
+```mermaid
+classDiagram
+    direction TB
+
+    namespace Domain_Model {
+        class Component {
+            <<abstract>>
+            -String id
+            -String name
+            -String brand
+            -double price
+            +Component(String id, String name, String brand, double price)
+            +getId() String
+            +getName() String
+            +getBrand() String
+            +getPrice() double
+            +getSpecs()* String
+        }
+
+        class CPU {
+            -String socket
+            -int tdp
+            -int performanceScore
+            -boolean hasIGPU
+            +CPU(String id, String name, String brand, double price, String socket, int tdp, int performanceScore, boolean hasIGPU)
+            +getSocket() String
+            +getTdp() int
+            +getPerformanceScore() int
+            +hasIGPU() boolean
+            +getSpecs() String
+        }
+
+        class Motherboard {
+            -String socket
+            -String ramType
+            -int maxRamGb
+            -String formFactor
+            +Motherboard(String id, String name, String brand, double price, String socket, String ramType, int maxRamGb, String formFactor)
+            +getSocket() String
+            +getRamType() String
+            +getMaxRamGb() int
+            +getFormFactor() String
+            +getSpecs() String
+        }
+
+        class GPU {
+            -int vramGB
+            -int powerWatts
+            -int performanceScore
+            -int lengthMm
+            +GPU(String id, String name, String brand, double price, int vramGB, int performanceScore, int powerWatts, int lengthMm)
+            +getVramGB() int
+            +getPowerWatts() int
+            +getPerformanceScore() int
+            +getLengthMm() int
+            +getSpecs() String
+        }
+
+        class RAM {
+            -int capacityGB
+            -String memoryType
+            -int speedMHz
+            +RAM(String id, String name, String brand, double price, int capacityGB, String memoryType, int speedMHz)
+            +getCapacityGB() int
+            +getMemoryType() String
+            +getSpeedMHz() int
+            +getSpecs() String
+        }
+
+        class Storage {
+            -int capacityGB
+            -String storageType
+            -String interfaceType
+            +Storage(String id, String name, String brand, double price, int capacityGB, String storageType, String interfaceType)
+            +getCapacityGB() int
+            +getStorageType() String
+            +getInterfaceType() String
+            +getSpecs() String
+        }
+
+        class PowerSupply {
+            -int wattage
+            -String efficiencyRating
+            -String modularity
+            +PowerSupply(String id, String name, String brand, double price, int wattage, String efficiencyRating, String modularity)
+            +getWattage() int
+            +getEfficiencyRating() String
+            +getModularity() String
+            +getSpecs() String
+        }
+
+        class PCCase {
+            -List~String~ supportedFormFactors
+            -int maxGpuLengthMm
+            +PCCase(String id, String name, String brand, double price, List~String~ supportedFormFactors, int maxGpuLengthMm)
+            +getSupportedFormFactors() List~String~
+            +getMaxGpuLengthMm() int
+            +getSpecs() String
+        }
+
+        class Workload {
+            <<enumeration>>
+            SCHOOLWORK
+            GAMING
+            VIDEO_EDITING
+        }
+
+        class PCBuild {
+            -String buildName
+            -CPU cpu
+            -Motherboard motherboard
+            -GPU gpu
+            -RAM ram
+            -Storage storage
+            -PowerSupply powerSupply
+            -PCCase pcCase
+            -int BASE_SYSTEM_WATTAGE$
+            +PCBuild()
+            +PCBuild(String buildName)
+            +getBuildName() String
+            +setBuildName(String buildName) void
+            +getCpu() CPU
+            +setCpu(CPU cpu) void
+            +getMotherboard() Motherboard
+            +setMotherboard(Motherboard motherboard) void
+            +getGpu() GPU
+            +setGpu(GPU gpu) void
+            +getRam() RAM
+            +setRam(RAM ram) void
+            +getStorage() Storage
+            +setStorage(Storage storage) void
+            +getPowerSupply() PowerSupply
+            +getPsu() PowerSupply
+            +setPowerSupply(PowerSupply powerSupply) void
+            +setPsu(PowerSupply powerSupply) void
+            +getPcCase() PCCase
+            +setPcCase(PCCase pcCase) void
+            +addComponent(Component component) void
+            +removeComponent(Class~Component~ componentType) void
+            +removeComponent(Component component) void
+            +getTotalPrice() double
+            +getEstimatedWattage() int
+            +getSelectedParts() List~Component~
+            +getMissingComponents() List~String~
+            +validateCompleteBuild() void
+            +validateBudget(double maxBudget) void
+            +validateBudget(double minBudget, double maxBudget) void
+            +validateCompatibility(CompatibilityChecker checker) void
+            +displaySummary() String
+            -appendPart(StringBuilder summary, String label, Component part) void
+            +clearBuild() void
+        }
+    }
+
+    namespace Services_And_Persistence {
+        class PartCatalog {
+            -List~Component~ components
+            -List~String~ loadWarnings
+            +addPart(Component part) void
+            +getAllParts() List~Component~
+            +size() int
+            +findById(String id) Component
+            +filterByTypeAndPrice(Class~T~ type, double min, double max) List~T~
+            +getPartsByType(Class~T~ type) List~T~
+            +filterByPrice(double min, double max) List~Component~
+            +filterByTypeAndBrand(Class~T~ type, String brand) List~T~
+            +getCheapest(Class~T~ type) T
+            +loadFromFile(String filePath) int
+            +getLoadWarnings() List~String~
+            -createComponent(Map~String, Object~ data)$ Component
+        }
+
+        class CompatibilityChecker {
+            +checkAllParts(PCBuild build) boolean
+            +checkSocketCompatibility(PCBuild build) boolean
+            +checkRamCompatibility(PCBuild build) boolean
+            +checkFormFactorCompatibility(PCBuild build) boolean
+            +checkGpuClearance(PCBuild build) boolean
+            +checkPowerSufficiency(PCBuild build) boolean
+            +getCompatibilityReport(PCBuild build) String
+        }
+
+        class BottleneckAnalyzer {
+            -double BALANCED_CPU_GPU_RATIO$
+            -int cpuScore
+            -int gpuScore
+            -Workload workload
+            +BottleneckAnalyzer(int cpuScore, int gpuScore, Workload workload)
+            +BottleneckAnalyzer(int cpuScore, int gpuScore, String workload)
+            +calculateRatio() double
+            +calculateDifference() double
+            +getBottleneckLevel() String
+            +getBottleneckReport() String
+            +getWorkload() Workload
+            +getCpuScore() int
+            +getGpuScore() int
+        }
+
+        class BuildRecommender {
+            -double PSU_SAFETY_MULTIPLIER$
+            -int BASE_SYSTEM_WATTAGE$-double SCORE_TIE_TOLERANCE$
+            -PartCatalog catalog
+            -PCBuild recommendedBuild
+            +BuildRecommender(PartCatalog catalog)
+            +generateBuild(double minBudget, double maxBudget, Workload workload, String preferredBrand) PCBuild
+            +getRecommendedBuild() PCBuild
+        }
+
+        class BuildFileManager {
+            -String HEADER$
+            -String[] SLOTS$-Class[] TYPES$
+            +saveBuild(PCBuild build, String filePath) void
+            +loadBuild(String filePath, PartCatalog catalog) PCBuild
+        }
+    }
+
+    namespace Custom_Exceptions {
+        class ECPCException {
+            +ECPCException(String message)
+            +ECPCException(String message, Throwable cause)
+        }
+
+        class BudgetExceededException {
+            +BudgetExceededException(String message)
+        }
+
+        class IncompatibleComponentException {
+            +IncompatibleComponentException(String message)
+        }
+
+        class IncompleteBuildException {
+            +IncompleteBuildException(String message)
+        }
+
+        class InvalidInputException {
+            +InvalidInputException(String message)
+        }
+    }
+
+    namespace Presentation_GUI {
+        class Main {
+            +main(String[] arguments)$ void
+            -findDatabase()$ Path
+        }
+
+        class MainFrame {
+            -PartCatalog catalog
+            -CompatibilityChecker compatibilityChecker
+            -BuildRecommender buildRecommender
+            -BuildFileManager buildFileManager
+            -Map~Class, JComboBox~ componentSelectors
+            -String databaseName
+            -PCBuild currentBuild
+            -File currentSaveFile
+            -boolean updatingSelectors
+            +installTheme()$ void
+            +MainFrame(PartCatalog catalog, String databaseName)
+            -runCompatibilityCheck() void
+            -analyzeBottleneck() void
+            -generateAutomaticBuild() void
+            -saveBuild(boolean saveAs) void
+            -openBuild() void
+            -refreshOverview() void
+        }
+
+        class ECPCTheme {
+            +Color BACKGROUND$+Color SIDEBAR$
+            +Color PANEL$+Color SURFACE$
+            +Color DEEP$+Color BORDER$
+            +Color ACCENT$+Color ACCENT_HOVER$
+            +Color PURPLE$+Color TEXT$
+            +Color MUTED$+Color SUCCESS$
+            +Color WARNING$+Font BODY$
+            +Font LABEL$+Font CAPTION$
+            +Font OVERLINE$+Font SECTION$
+            +Font PAGE_TITLE$+Font METRIC$
+            +Font REPORT$+Font REPORT_HEADING$
+            -ECPCTheme()
+            +install()$ void
+            +styleTextField(JTextField field)$ void
+            +styleComboBox(JComboBox comboBox)$ void
+            +styleScrollPane(JScrollPane scrollPane)$ void
+            +styleProgress(JProgressBar progressBar)$ void
+        }
+    }
+
+    %% --- Inheritance ---
+    Component <|-- CPU : extends
+    Component <|-- Motherboard : extends
+    Component <|-- GPU : extends
+    Component <|-- RAM : extends
+    Component <|-- Storage : extends
+    Component <|-- PowerSupply : extends
+    Component <|-- PCCase : extends
+
+    ECPC
