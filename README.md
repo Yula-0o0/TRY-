@@ -243,7 +243,7 @@ The project is organized into dedicated folders to keep the source code, resourc
 │
 ├── 📁 docs/
 │   ├── 📄 Project-Proposal.pdf
-│   └── 🖼️ <a href="docs/UML-DIAGRAM.png">UML-DIAGRAM.PNG</a>
+│   └── 🖼️ <a href="docs/UML-DIAGRAM.png">UML-DIAGRAM.png</a>
 │
 ├── 📁 release/
 │   └── 📦 ECPC.jar
