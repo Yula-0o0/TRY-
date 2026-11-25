@@ -235,15 +235,15 @@ The project is organized into dedicated folders to keep the source code, resourc
       <details>
         <summary><kbd>🔽 Full Directory Tree — Click to Expand / Minimize</kbd></summary>
         <br>
-
-```text
+<pre>
 📁 ECPC/
 │
 ├── 📄 README.md
 ├── 📄 .gitignore
 │
 ├── 📁 docs/
-│   └── 📄 Project-Proposal.pdf
+│   ├── 📄 Project-Proposal.pdf
+│   └── 🖼️ <a href="docs/UML-DIAGRAM.png">UML-DIAGRAM.PNG</a>
 │
 ├── 📁 release/
 │   └── 📦 ECPC.jar
@@ -301,13 +301,11 @@ The project is organized into dedicated folders to keep the source code, resourc
 │
 └── 📁 static/
     └── 🖼️ logo.gif
-```
-
+</pre>
 </details>
 </td>
 </tr>
 </table>
-
 ---
 
 ## 👷 Team Members & Roles
