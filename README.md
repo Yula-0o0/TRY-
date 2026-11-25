@@ -145,6 +145,84 @@ To develop a Java-based application that guides users in designing a compatible 
 
 ---
 
+## 📂 Project Structure
+
+The project is organized into dedicated folders to keep the source code, resources, documentation, screenshots, and compiled application properly arranged.
+
+<details>
+<summary>Click to view full directory tree</summary>
+
+```text
+📁 ECPC/
+│
+├── 📄 README.md
+├── 📄 .gitignore
+│
+├── 📁 docs/
+│   └── 📄 Project-Proposal.pdf
+│
+├── 📁 release/
+│   └── 📦 ECPC.jar
+│
+├── 📁 screenshots/
+│   ├── 📁 auto-build/
+│   │   ├── 🖼️ autobuildinputs.PNG
+│   │   └── 🖼️ autobuildoutputs.PNG
+│   │
+│   └── 📁 manual-build/
+│       ├── 🖼️ manualbuildinputs.PNG
+│       ├── 🖼️ manualbuildcompatibilitycheck.PNG
+│       └── 🖼️ manualbuildbottleneckanalyzer.PNG
+│
+├── 📁 src/
+│   └── 📁 main/
+│       │
+│       ├── 📁 java/
+│       │   └── 📁 ecpc/
+│       │       │
+│       │       ├── 📁 components/
+│       │       │   ├── ☕ Component.java
+│       │       │   ├── ☕ CPU.java
+│       │       │   ├── ☕ GPU.java
+│       │       │   ├── ☕ Motherboard.java
+│       │       │   ├── ☕ PCCase.java
+│       │       │   ├── ☕ PowerSupply.java
+│       │       │   ├── ☕ RAM.java
+│       │       │   └── ☕ Storage.java
+│       │       │
+│       │       ├── 📁 exceptions/
+│       │       │   ├── ☕ ECPCException.java
+│       │       │   ├── ☕ BudgetExceededException.java
+│       │       │   ├── ☕ IncompatibleComponentException.java
+│       │       │   ├── ☕ IncompleteBuildException.java
+│       │       │   └── ☕ InvalidInputException.java
+│       │       │
+│       │       ├── 📁 features/
+│       │       │   ├── ☕ BottleneckAnalyzer.java
+│       │       │   ├── ☕ BuildFileManager.java
+│       │       │   ├── ☕ BuildRecommender.java
+│       │       │   ├── ☕ CompatibilityChecker.java
+│       │       │   ├── ☕ PCBuild.java
+│       │       │   ├── ☕ PartCatalog.java
+│       │       │   └── ☕ Workload.java
+│       │       │
+│       │       ├── 📁 gui/
+│       │       │   ├── ☕ ECPCTheme.java
+│       │       │   └── ☕ MainFrame.java
+│       │       │
+│       │       └── ☕ Main.java
+│       │
+│       └── 📁 resources/
+│           └── 🗃️ Components.json
+│
+└── 📁 static/
+    └── 🖼️ logo.gif
+```
+
+</details>
+
+---
+
 ## 👷 Team Members & Roles
 
 | Team Member | Role | Assigned Tasks |
