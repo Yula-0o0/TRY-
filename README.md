@@ -460,3 +460,35 @@ Although ECPC already provides essential PC building and recommendation function
 ## 🗂️ Project Contributors & Repository
 * **Team Name:** An Family (Section: CS 2101)
 * **GitHub Repository:** [ECPC-Efficient-Custom-Personal-Computer-Builder](https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder.git)
+
+---
+
+## 🙏 Acknowledgments
+
+<div align="center">
+
+<!-- Animated Typing Header -->
+<a href="https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=32&duration=2500&pause=1000&color=4ADE80&center=true&vCenter=true&width=850&height=65&lines=THANK+YOU%2C+MA'AM+FATIMA!;FROM+AN+FAMILY+%E2%80%A2+SECTION+CS+2101;OOP+101%3A+OBJECT-ORIENTED+PROGRAMMING" alt="Thank You Ma'am Fatima" />
+</a>
+
+<br>
+
+<!-- Animated Terminal Boot-Up Message -->
+<a href="https://github.com/AN-FAMILY-OOP101/ECPC-Efficient-Custom-Personal-Computer-Builder">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=3000&pause=1200&color=38BDF8&center=true&vCenter=true&multiline=true&width=850&height=110&lines=%3E+Initializing+Gratitude+Module...+%5BOK%5D;%3E+Thank+you+for+your+guidance%2C+patience%2C+and+mentorship!;%3E+Signed+by%3A+Carandang+%E2%80%A2+Palma+%E2%80%A2+Palor+(An+Family)" alt="Gratitude Terminal Output" />
+</a>
+
+<br>
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>To Ma'am Fatima,</strong><br>
+      Thank you for your guidance, patience, and mentorship throughout the development of <strong>ECPC (Efficient Custom Personal Computer Builder)</strong>.<br>
+      Your lessons in Object-Oriented Programming empowered <strong>An Family (Section CS 2101)</strong> to turn concepts into a working Java application.
+    </td>
+  </tr>
+</table>
+
+</div>
