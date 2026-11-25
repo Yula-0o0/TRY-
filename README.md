@@ -162,7 +162,38 @@ To develop a Java-based application that guides users in designing a compatible 
 ---
 
 ## 📸 Sample Screenshots
+The following screenshots showcase selected features and functionalities of the ECPC application.
 
+### Manual Build
+
+#### 1. Component Selection
+Allows users to manually select PC components for their custom build.
+
+![Manual Build - Component Selection](screenshots/manual-build/manualbuildinputs.PNG)
+
+#### 2. Compatibility Check
+Displays the compatibility results of the selected PC components.
+
+![Manual Build - Compatibility Check](screenshots/manual-build/manualbuildcompatibilitycheck.PNG)
+
+#### 3. Bottleneck Analysis
+Presents the CPU-GPU balance analysis based on the selected workload.
+
+![Manual Build - Bottleneck Analysis](screenshots/manual-build/manualbuildbottleneckanalyzer.PNG)
+
+---
+
+### Automatic Build
+
+#### 1. User Inputs
+Allows users to specify their budget, intended workload, and brand preferences.
+
+![Automatic Build - User Inputs](screenshots/auto-build/autobuildinputs.PNG)
+
+#### 2. Generated Build
+Displays the recommended PC components based on the user's selected preferences and budget.
+
+![Automatic Build - Generated Results](screenshots/auto-build/autobuildoutputs.PNG)
 
 ---
 
