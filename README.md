@@ -83,65 +83,145 @@ To develop a Java-based application that guides users in designing a compatible 
 
 ## 🧱 OOP Concepts Demonstrated
 
-* **Classes and Objects:** Defines blueprints for hardware and system logic (such as `Component`, `CPU`, `Motherboard`, `GPU`, `RAM`, `Storage`, `PowerSupply`, `PCCase`, `PCBuild`, and `PartCatalog`), with objects representing individual catalog parts, the user's current build, and generated reports.
-* **Methods:** Encapsulates core operations including calculating total costs and estimated wattage (`PCBuild`), running compatibility checks (`CompatibilityChecker`), computing CPU-GPU balance (`BottleneckAnalyzer`), and generating recommended builds (`BuildRecommender`).
-* **Encapsulation:** Keeps attributes like price, socket type, wattage, dimensions, and performance scores private and accessed via public getters, while catalog parts have no setters to prevent modification after loading and build updates pass through validating methods like `addComponent()`.
-  ```java
-  public abstract class Component {
-      private final String id;
-      private final String name;
-      private final String brand;
-      private final double price;
-
-      public String getId() { return id; }
-      public String getName() { return name; }
-      public String getBrand() { return brand; }
-      public double getPrice() { return price; }
-  }
-  ```
-
-* **Inheritance:** Uses the abstract class `Component` to hold shared attributes (`ID`, `name`, `brand`, `price`), which `CPU`, `Motherboard`, `GPU`, `RAM`, `Storage`, `PowerSupply`, and `PCCase` extend to add their own specifications and avoid repeated code.
-  ```java
-  public class CPU extends Component {
-      private final String socket;
-      private final int tdp;
-      private final int performanceScore;
-      private final boolean hasIGPU;
-
-      public CPU(String id, String name, String brand, double price,
-                 String socket, int tdp, int performanceScore, boolean hasIGPU) {
-          super(id, name, brand, price);
-          this.socket = socket;
-          this.tdp = tdp;
-          this.performanceScore = performanceScore;
-          this.hasIGPU = hasIGPU;
-      }
-  }
-  ```
-
-* **Polymorphism:** Handles all parts uniformly as `Component` objects (such as storing them in a single list and displaying them in a single loop) while each subclass overrides `getSpecs()` with specialized behavior.
-  ```java
-  // CPU.java
-  @Override
-  public String getSpecs() {
-      return "Socket: " + socket + " | TDP: " + tdp + "W | Score: " + performanceScore + " | Integrated Graphics: " + hasIGPU;
-  }
-
-  // GPU.java
-  @Override
-  public String getSpecs() {
-      return "VRAM: " + vramGB + "GB | Power: " + powerWatts + "W | Score: " + performanceScore + " | Length: " + lengthMm + "mm";
-  }
-  ```
-
-* **Abstraction:** Relies on the abstract class `Component` to declare mandatory methods for every part, hiding complex calculations like wattage totals and bottleneck formulas behind simple method calls for the GUI.
-  ```java
-  public abstract class Component {
-      public abstract String getSpecs();
-  }
-  ```
-* **Exception Handling:** Employs custom exceptions (such as `IncompatibleComponentException`, `BudgetExceededException`, and `InvalidInputException`) alongside try-catch blocks to handle invalid inputs, incompatible parts, unfeasible budgets, and missing or corrupted files without crashing the program.
-* **Arrays/Data Handling:** Utilizes `ArrayList` collections to store the parts catalog, the components in the active build, and the collection of saved builds.
+<table>
+  <thead>
+    <tr>
+      <th>Principle</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Classes and Objects</strong></td>
+      <td>Defines blueprints for hardware and system logic (such as <code>Component</code>, <code>CPU</code>, <code>Motherboard</code>, <code>GPU</code>, <code>RAM</code>, <code>Storage</code>, <code>PowerSupply</code>, <code>PCCase</code>, <code>PCBuild</code>, and <code>PartCatalog</code>), with objects representing individual catalog parts, the user's current build, and generated reports.</td>
+    </tr>
+    <tr>
+      <td><strong>Methods</strong></td>
+      <td>Encapsulates core operations including calculating total costs and estimated wattage (<code>PCBuild</code>), running compatibility checks (<code>CompatibilityChecker</code>), computing CPU-GPU balance (<code>BottleneckAnalyzer</code>), and generating recommended builds (<code>BuildRecommender</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Encapsulation</strong></td>
+      <td>
+        Keeps attributes like price, socket type, wattage, dimensions, and performance scores private and accessed via public getters, while catalog parts have no setters to prevent modification after loading and build updates pass through validating methods like <code>addComponent()</code>.<br><br>
+        <details>
+          <summary><kbd>View Sample Code</kbd></summary>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+<pre lang="java">
+public abstract class Component {
+    private final String id;
+    private final String name;
+    private final String brand;
+    private final double price;
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getBrand() { return brand; }
+    public double getPrice() { return price; }
+}
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Inheritance</strong></td>
+      <td>
+        Uses the abstract class <code>Component</code> to hold shared attributes (<code>ID</code>, <code>name</code>, <code>brand</code>, <code>price</code>), which <code>CPU</code>, <code>Motherboard</code>, <code>GPU</code>, <code>RAM</code>, <code>Storage</code>, <code>PowerSupply</code>, and <code>PCCase</code> extend to add their own specifications and avoid repeated code.<br><br>
+        <details>
+          <summary><kbd>View Sample Code</kbd></summary>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+<pre lang="java">
+public class CPU extends Component {
+    private final String socket;
+    private final int tdp;
+    private final int performanceScore;
+    private final boolean hasIGPU;
+    public CPU(String id, String name, String brand, double price,
+               String socket, int tdp, int performanceScore, boolean hasIGPU) {
+        super(id, name, brand, price);
+        this.socket = socket;
+        this.tdp = tdp;
+        this.performanceScore = performanceScore;
+        this.hasIGPU = hasIGPU;
+    }
+}
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Polymorphism</strong></td>
+      <td>
+        Handles all parts uniformly as <code>Component</code> objects (such as storing them in a single list and displaying them in a single loop) while each subclass overrides <code>getSpecs()</code> with specialized behavior.<br><br>
+        <details>
+          <summary><kbd>View Sample Code</kbd></summary>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+<pre lang="java">
+// CPU.java
+@Override
+public String getSpecs() {
+    return "Socket: " + socket + " | TDP: " + tdp + "W | Score: " + performanceScore + " | Integrated Graphics: " + hasIGPU;
+}
+// GPU.java
+@Override
+public String getSpecs() {
+    return "VRAM: " + vramGB + "GB | Power: " + powerWatts + "W | Score: " + performanceScore + " | Length: " + lengthMm + "mm";
+}
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Abstraction</strong></td>
+      <td>
+        Relies on the abstract class <code>Component</code> to declare mandatory methods for every part, hiding complex calculations like wattage totals and bottleneck formulas behind simple method calls for the GUI.<br><br>
+        <details>
+          <summary><kbd>View Sample Code</kbd></summary>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+<pre lang="java">
+public abstract class Component {
+    public abstract String getSpecs();
+}
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Exception Handling</strong></td>
+      <td>Employs custom exceptions (such as <code>IncompatibleComponentException</code>, <code>BudgetExceededException</code>, and <code>InvalidInputException</code>) alongside try-catch blocks to handle invalid inputs, incompatible parts, unfeasible budgets, and missing or corrupted files without crashing the program.</td>
+    </tr>
+    <tr>
+      <td><strong>Arrays/Data Handling</strong></td>
+      <td>Utilizes <code>ArrayList</code> collections to store the parts catalog, the components in the active build, and the collection of saved builds.</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -149,8 +229,12 @@ To develop a Java-based application that guides users in designing a compatible 
 
 The project is organized into dedicated folders to keep the source code, resources, documentation, screenshots, and compiled application properly arranged.
 
-<details>
-<summary>Click to view full directory tree</summary>
+<table>
+  <tr>
+    <td>
+      <details>
+        <summary><kbd>🔽 Full Directory Tree — Click to Expand / Minimize</kbd></summary>
+        <br>
 
 ```text
 📁 ECPC/
@@ -220,6 +304,9 @@ The project is organized into dedicated folders to keep the source code, resourc
 ```
 
 </details>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -234,6 +321,14 @@ The project is organized into dedicated folders to keep the source code, resourc
 ---
 
 ## 💻 Instructions for Running the Program
+
+<table>
+  <tr>
+    <td>
+      <details>
+        <summary><kbd>🔽 Getting Started — Click to Expand / Minimize</kbd></summary>
+        <br>
+
 ## Getting Started
 
 Follow the instructions below to download and run ECPC on your computer.
@@ -296,6 +391,11 @@ Alternatively, open your terminal or Command Prompt inside the folder where you 
 ```bash
 java -jar ECPC.jar
 ```
+
+</details>
+</td>
+</tr>
+</table>
 
 ---
 
