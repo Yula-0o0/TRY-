@@ -11,7 +11,7 @@
 *OOP 101: Object-Oriented Programming (1st Semester, AY 2026-2027)*
 
 [![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
-[![Status](https://img.shields.io/badge/Status-Finished-blue.svg)]()
+[![Status](https://img.shields.io/badge/Status-v1.0.0-blue.svg)]()
 [![Section](https://img.shields.io/badge/Section-CS%202101-green.svg)]()
 
 </div>
