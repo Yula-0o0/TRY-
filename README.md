@@ -156,8 +156,68 @@ To develop a Java-based application that guides users in designing a compatible 
 ---
 
 ## 💻 Instructions for Running the Program
+## Getting Started
 
-1. 
+Follow the instructions below to download and run ECPC on your computer.
+
+### 1. System Requirements
+
+- **Operating System:** Windows, macOS, or Linux
+- **Java Runtime Environment:** Java 17 or later
+- No external database or additional libraries required.
+- No IDE or Java Development Kit (JDK) is required to run the application.
+
+### 2. Install Java (If Not Installed)
+
+Download and install the Java Runtime Environment (JRE) from Eclipse Adoptium.
+
+| Java Version | Download Link |
+| --- | --- |
+| Java 17 (LTS) | [Download Java 17](https://adoptium.net/temurin/releases/?version=17) |
+| Java 21 (LTS) | [Download Java 21](https://adoptium.net/temurin/releases?version=21) |
+
+#### Installation Instructions
+
+1. Open either of the download links above.
+2. Select your operating system (Windows, macOS, or Linux).
+3. Select your system architecture (`x64` for most Windows computers).
+4. Select **JRE** as the package type.
+5. Download the appropriate installer or package.
+6. Complete the installation.
+7. On Windows, enable the option to add Java to the system `PATH` if available.
+
+For additional installation instructions, refer to the [Official Java Installation Guide](https://adoptium.net/installation).
+
+After installation, reopen Command Prompt or Terminal and verify the installation:
+
+```bash
+java -version
+```
+
+> [!NOTE]
+> You only need the Java Runtime Environment (JRE) to run ECPC. The Java Development Kit (JDK) is only necessary if you intend to compile or modify the source code.
+
+### 3. Download ECPC
+
+1. Navigate to the **Releases** section of this GitHub repository.
+2. Select the latest stable release.
+3. Locate the **Assets** section.
+4. Download `ECPC.jar`.
+5. Save the file to your preferred directory.
+
+### 4. Run the Application
+
+#### Double-Click
+
+If your operating system has Java configured to open JAR files, simply double-click `ECPC.jar` to launch the application.
+
+#### Terminal / Command Prompt
+
+Alternatively, open your terminal or Command Prompt inside the folder where you saved `ECPC.jar` and run:
+
+```bash
+java -jar ECPC.jar
+```
 
 ---
 
