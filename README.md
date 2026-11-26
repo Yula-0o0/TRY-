@@ -307,6 +307,7 @@ The project is organized into dedicated folders to keep the source code, resourc
     </td>
   </tr>
 </table>
+
 ---
 
 ## 👷 Team Members & Roles
