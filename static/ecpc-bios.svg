@@ -1,0 +1,91 @@
+<svg width="920" height="380" viewBox="0 0 920 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .mono { font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace; }
+    .ascii-red { fill: #EF4444; font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; white-space: pre; }
+    .ascii-dim { fill: #991B1B; font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; white-space: pre; }
+    .ascii-yel { fill: #DCDCAA; font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; white-space: pre; }
+    
+    /* Boot sequence reveal */
+    .fade1 { opacity: 0; animation: show 0.2s forwards 0.3s; }
+    .fade2 { opacity: 0; animation: show 0.2s forwards 0.8s; }
+    .fade3 { opacity: 0; animation: show 0.2s forwards 1.3s; }
+    .fade4 { opacity: 0; animation: show 0.2s forwards 1.8s; }
+    .blink { animation: blink 1s step-end infinite; }
+
+    /* Moving Logo Animations */
+    .rig-float { animation: floatRig 3.6s ease-in-out infinite; }
+    .pwr-pulse { animation: pwrGlow 1.5s ease-in-out infinite; }
+    .scan-1 { animation: scanWave 2.4s ease-in-out infinite 0.0s; }
+    .scan-2 { animation: scanWave 2.4s ease-in-out infinite 0.2s; }
+    .scan-3 { animation: scanWave 2.4s ease-in-out infinite 0.4s; }
+    .scan-4 { animation: scanWave 2.4s ease-in-out infinite 0.6s; }
+    .scan-5 { animation: scanWave 2.4s ease-in-out infinite 0.8s; }
+
+    @keyframes show { to { opacity: 1; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes floatRig {
+      0%, 100% { transform: translate(22px, 62px); }
+      50%      { transform: translate(22px, 53px); }
+    }
+    @keyframes pwrGlow {
+      0%, 100% { fill: #EF4444; }
+      50%      { fill: #DCDCAA; }
+    }
+    @keyframes scanWave {
+      0%, 100% { fill: #EF4444; }
+      45%      { fill: #DCDCAA; }
+      70%      { fill: #9CDCFE; }
+    }
+  </style>
+
+  
+  <rect x="1" y="1" width="918" height="378" rx="10" fill="#0B0C10" stroke="#991B1B" stroke-width="2" />
+  
+  
+  <rect x="2" y="2" width="916" height="32" rx="8" fill="#16181D" />
+  <circle cx="22" cy="18" r="5" fill="#EF4444" />
+  <circle cx="40" cy="18" r="5" fill="#DCDCAA" />
+  <circle cx="58" cy="18" r="5" fill="#9CDCFE" />
+  <text x="460" y="23" text-anchor="middle" fill="#9CDCFE" class="mono" font-size="12" font-weight="700">ECPC-BIOS v1.0.0 — AN FAMILY (CS 2101)</text>
+
+  
+  <g class="rig-float" transform="translate(22, 62)">
+    <text y="0" class="ascii-dim" xml:space="preserve">      .-------------------------.        .-----------.</text>
+    <text y="15" class="ascii-dim" xml:space="preserve">     / .-----------------------. \      / .---------. \</text>
+    <text y="30" class="ascii-red" xml:space="preserve">    | |                         | |    | |  [=====]  | |</text>
+    <text y="45" class="ascii-red scan-1" xml:space="preserve">    | |     ███████╗ ██████╗    | |    | |  <tspan class="pwr-pulse">(o) PWR</tspan>  | |</text>
+    <text y="60" class="ascii-yel scan-2" xml:space="preserve">    | |     ██╔════╝██╔════╝    | |    | |  -------  | |</text>
+    <text y="75" class="ascii-yel scan-3" xml:space="preserve">    | |     █████╗  ██║         | |    | |  | GPU |  | |</text>
+    <text y="90" class="ascii-red scan-4" xml:space="preserve">    | |     ██╔══╝  ██║         | |    | |  | FAN |  | |</text>
+    <text y="105" class="ascii-red scan-5" xml:space="preserve">    | |     ███████╗╚██████╗    | |    | |  -------  | |</text>
+    <text y="120" class="ascii-red" xml:space="preserve">    | |     ╚══════╝ ╚═════╝    | |    | |  [:::::]  | |</text>
+    <text y="135" class="ascii-dim" xml:space="preserve">    | |                         | |    | |  [:::::]  | |</text>
+    <text y="150" class="ascii-dim" xml:space="preserve">     \ '-----------------------' /      | |  [:::::]  | |</text>
+    <text y="165" class="ascii-dim" xml:space="preserve">      '---------=======---------'       | |           | |</text>
+    <text y="180" class="ascii-red" xml:space="preserve">               _[=====]_                | '---------' |</text>
+    <text y="195" class="ascii-red" xml:space="preserve">            .-'---------'-.             '-------------'</text>
+    <text y="220" class="ascii-dim" xml:space="preserve">       .-----------------------.</text>
+    <text y="235" class="ascii-red" xml:space="preserve">      / [][][][][][][][][][][] /   .---.</text>
+    <text y="250" class="ascii-red" xml:space="preserve">     / [][][][][][][][][][][] /   /  |  \</text>
+    <text y="265" class="ascii-dim" xml:space="preserve">    '-----------------------'    '-----'</text>
+  </g>
+
+  
+  <g transform="translate(420, 82)">
+    <text x="0" y="0" fill="#EF4444" class="mono" font-size="42" font-weight="900" letter-spacing="4">ECPC</text>
+    <text x="0" y="26" fill="#F8FAFC" class="mono" font-size="15.5" font-weight="700">Efficient Custom Personal Computer Builder</text>
+    <line x1="0" y1="42" x2="470" y2="42" stroke="#30363D" stroke-width="1" />
+
+    <text x="0" y="72" fill="#9CDCFE" class="mono fade1" font-size="12.5">[OK] Loading PartCatalog (Components.json) ....... 100%</text>
+    <text x="0" y="96" fill="#9CDCFE" class="mono fade2" font-size="12.5">[OK] Initializing CompatibilityChecker ........... READY</text>
+    <text x="0" y="120" fill="#9CDCFE" class="mono fade3" font-size="12.5">[OK] Calibrating BottleneckAnalyzer .............. ONLINE</text>
+
+    
+    <g class="fade4">
+      <rect x="0" y="148" width="470" height="54" rx="6" fill="#141112" stroke="#EF4444" stroke-width="1.5" />
+      <text x="235" y="181" text-anchor="middle" fill="#DCDCAA" class="mono" font-size="16" font-weight="800" letter-spacing="1.5">
+        &gt;&gt; BUILD RIGHT THE FIRST TIME. &lt;&lt;<tspan fill="#EF4444" class="blink"> ▋</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
