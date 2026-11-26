@@ -243,9 +243,9 @@ The project is organized into dedicated folders to keep the source code, resourc
 │
 ├── 📁 docs/
 │   ├── 📄 Project-Proposal.pdf
-<details><summary>&nbsp;&nbsp;└── 🖼️ UML-DIAGRAM.png — Click to Preview</summary>
+<details><summary>&nbsp;&nbsp;└── <kbd>🖼️ UML-DIAGRAM.png — Click to Preview</kbd></summary>
 <img src="docs/UML-DIAGRAM.png" alt="ECPC UML Diagram" width="100%">
-</details>│
+</details>
 ├── 📁 release/
 │   └── 📦 ECPC.jar
 │
@@ -307,7 +307,6 @@ The project is organized into dedicated folders to keep the source code, resourc
     </td>
   </tr>
 </table>
-
 ---
 
 ## 👷 Team Members & Roles
