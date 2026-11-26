@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/logo.gif" alt="ECPC Logo" width="800">
+  <img src="static/ecpc-bios.svg" alt="ECPC — Build right the first time." width="100%" />
 </p>
 
 <div align="center">
