@@ -209,6 +209,6 @@
     <text x="16" y="270" fill="#9CDCFE" class="mono" font-size="11.5">&gt; Structures app layout</text>
 
     <rect x="16" y="304" width="246" height="24" rx="4" fill="#0B0C10" stroke="#30363D" />
-    <text x="139" y="320" text-anchor="middle" fill="#DCDCAA" class="mono" font-size="10.5" font-weight="700">STATUS: ACTIVE • ARCH</text>
+    <text x="139" y="320" text-anchor="middle" fill="#DCDCAA" class="mono" font-size="10.5" font-weight="700">STATUS: ACTIVE • ARCHI</text>
   </g>
 </svg>
